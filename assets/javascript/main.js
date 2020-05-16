@@ -15,17 +15,20 @@ const dieRollsArray = []
 rollButtonElement.addEventListener('click', function () {
     let numberofDice = userInputBoxElement.value
     let numberofSides = numberofSidesInputBoxElement.value
-    let index = 0
-
-    while (index < numberofDice) {
-        index++
-        let dieRollValue = Math.floor(Math.random() * numberofSides) + 1
-        dieRollsArray.push(dieRollValue)
+    if (numberofDice <= 0) {
+        dieRollTotalsElement.innerHTML = "<h2>Please enter a number!</h2>"
+    } else {
+        let index = 0
+        while (index < numberofDice) {
+            index++
+            let dieRollValue = Math.floor(Math.random() * numberofSides) + 1
+            dieRollsArray.push(dieRollValue)
+        }
+        let sumAllRolls = eval(dieRollsArray.join('+'))
+        dieRollTotalsElement.innerHTML = `<h2>Total:</h2> <h1> ${sumAllRolls}</h1>`
+        userInputBoxElement.innerHTML = " "
+        numberofSidesInputBoxElement.value = " "
     }
-    let sumAllRolls = eval(dieRollsArray.join('+'))
-    dieRollTotalsElement.innerHTML = `<h2>Total:</h2> <h1> ${sumAllRolls}</h1>`
-    userInputBoxElement.value = " "
-    numberofSidesInputBoxElement.value = " "
 
 })
 //Show individual die rolls
@@ -35,12 +38,12 @@ showResultsButtonElement.addEventListener('click', function () {
         displayAllRollsListElement.innerHTML += `<li class="dice"> ${dieRollsArray[index]} </li>`
         index++
     }
-        showResultsButtonElement.style.display = "none"
-        resetAllButtonElement.style.display = "inline"
+    showResultsButtonElement.style.display = "none"
+    resetAllButtonElement.style.display = "inline"
 })
 
 //reset all
-resetAllButtonElement.addEventListener('click', function(){
+resetAllButtonElement.addEventListener('click', function () {
     dieRollsArray.length = []
     dieRollTotalsElement.innerHTML = "<h2>Total:</h2>"
     displayAllRollsListElement.innerHTML = " "

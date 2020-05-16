@@ -18,6 +18,7 @@ body {
     color: white;
     font-family: 'Amiri', serif;
     font-weight: 700;
+    font-size: xx-large;
 }
 
 
@@ -41,6 +42,8 @@ select {
 
 #userInputBox{
 width: 80px;
+height: 30px;
+margin-bottom: 50px;
 
 }
 
@@ -48,6 +51,7 @@ button {
     cursor: pointer;
     padding: 10px;
     border: none;
+    width: 150px;
 }
 
 button:hover {
@@ -61,6 +65,7 @@ button:hover {
 ol {
 display: flex;
 text-align: center;
+flex-wrap: wrap;
 
 }
 

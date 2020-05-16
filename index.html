@@ -11,8 +11,10 @@
 <body>
     <main>
         <h1>Roll Some Dice!</h1>
-        <label for="numberofSidesInputBox"><h2>Choose your dice!</h2></label>
-        <select name="numberofSidesInputBox" id="numberofSidesInputBox" placeholder = "d4" required>
+        <label for="numberofSidesInputBox">
+            <h2>Choose your dice!</h2>
+        </label>
+        <select name="numberofSidesInputBox" id="numberofSidesInputBox" placeholder="d4" required>
             <option class="d4" value="4">d4</option>
             <option value="6">d6</option>
             <option value="8">d8</option>
@@ -20,10 +22,14 @@
             <option value="12">d12</option>
             <option value="20">d20</option>
         </select>
-        <label for="userInputBox"><h2>Enter number of dice</h2></label>
+        <label for="userInputBox">
+            <h2>Enter number of dice</h2>
+        </label>
         <input type="number" name="userInputBox" id="userInputBox" placeholder="Number of dice" required>
         <button id="rollButton">Roll!</button>
-        <div id="dieRollTotals"><h1>Total:</h1></div>
+        <div id="dieRollTotals">
+            <h1>Total:</h1>
+        </div>
         <button id="showResultsButton">show results</button>
         <button id="resetAllValues">Reset</button>
         <ol id="displayAllRollsList"></ol>
