@@ -49,4 +49,6 @@ resetAllButtonElement.addEventListener('click', function () {
     displayAllRollsListElement.innerHTML = " "
     showResultsButtonElement.style.display = "inline"
     resetAllButtonElement.style.display = "none"
+    userInputBoxElement.value = " "
+    numberofSidesInputBoxElement.value = " "
 })
