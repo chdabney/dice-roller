@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&display=swap');
 
 
 * {
@@ -9,29 +9,63 @@
     list-style: none;
 }
 
+
 body {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/external-content.duckduckgo.com.jpeg);
+    background-image: url(/assets/images/dungeons_and_dragons_5E_paladin_preview_1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: white;
-    font-family: 'Amiri', serif;
+    color: rgba(136, 30, 30, 0.876);
+    font-family: 'Gentium Book Basic', serif;
     font-weight: 700;
     font-size: xx-large;
 }
 
 
+header{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    background-image: url(/assets/images/external-content.duckduckgo.com.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
 
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
+    justify-content: space-between;
+    margin: 50px;
 }
-main > *{
-    margin: 10px;
+
+.inputContainer{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(241, 236, 220);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.resultContainer{
+width: 300px;
+margin: 20px;
+margin-left: 50px;
+padding: 10px;
+display:flex;
+flex-direction: column;
+background-color: rgb(241, 236, 220);
+
+}
+
+.totalButtons{
+    display: flex;
+    margin: 10px 0;
+   
 }
 
 select {
@@ -40,41 +74,80 @@ select {
 }
 
 
+
 #userInputBox{
 width: 80px;
 height: 30px;
 margin-bottom: 50px;
 
+
 }
+
 
 button {
     cursor: pointer;
     padding: 10px;
     border: none;
     width: 150px;
+    border-radius: 5px;
+    background-color: rgba(136, 30, 30, 0.876);
+    color: white;
+}
+
+
+.totalButtons button {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
 }
 
 button:hover {
     background-color: rgb(134, 130, 130);
+    
 }
 
-#resetAllValues {
-    display: none;
-}
 
-ol {
+
+.listItemContainer {
+height: 500px;
+width: 500px;
+position: relative;
+top: -650px;
+left: -400px;
+background-color: rgba(241, 236, 220, 0.897);
+float: right;
+overflow: scroll;
 display: flex;
-text-align: center;
 flex-wrap: wrap;
 
+} 
+
+#displayAllRollsList{
+    display: flex;
+    flex-direction: column-reverse;
+   
+    align-items: center;
 }
 
 .dice {
     margin: 10px;
     height: 60px;
-    padding-bottom: 15px;
     width: 60px;
-    background-color: white;
+    padding: 5px;
     color: #333;
     font-size: 40px;
-}
+    background-image: url(/assets/images/d20.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   text-align: center;
+} 
+ #critFail{
+     color: red;
+ }
+
+ #crit{
+     color: rgb(18, 209, 18);
+ }

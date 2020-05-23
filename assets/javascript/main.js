@@ -15,31 +15,29 @@ const dieRollsArray = []
 rollButtonElement.addEventListener('click', function () {
     let numberofDice = userInputBoxElement.value
     let numberofSides = numberofSidesInputBoxElement.value
-    if (numberofDice <= 0) {
-        dieRollTotalsElement.innerHTML = "<h2>Please enter a number!</h2>"
-    } else {
-        let index = 0
-        while (index < numberofDice) {
-            index++
-            let dieRollValue = Math.floor(Math.random() * numberofSides) + 1
-            dieRollsArray.push(dieRollValue)
+    let sumAllRolls = 0
+    for (let index = 0; index < numberofDice; index++) {
+        let dieRollValue = Math.floor(Math.random() * numberofSides) + 1
+        dieRollsArray.push(dieRollValue)
+        sumAllRolls += dieRollValue
+    }
+    dieRollTotalsElement.innerHTML = `<h2>Total: ${sumAllRolls}</h2>`
+})
+
+
+//Show individual die rolls. Collaberated with Chase Patrick to get min value and max value to change color accordingly. 
+showResultsButtonElement.addEventListener('click', function () {
+    for (let index = 0; index < dieRollsArray.length; index++) {
+        if (dieRollsArray[index] === 1) {
+            displayAllRollsListElement.innerHTML += `<li id= "critFail" class="dice"> ${dieRollsArray[index]} </li>`
+        } else if (dieRollsArray[index] == numberofSidesInputBoxElement.value) {
+            displayAllRollsListElement.innerHTML += `<li id= "crit" class="dice"> ${dieRollsArray[index]} </li>`
+        } else {
+            displayAllRollsListElement.innerHTML += `<li class="dice"> ${dieRollsArray[index]} </li>`
         }
-        let sumAllRolls = eval(dieRollsArray.join('+'))
-        dieRollTotalsElement.innerHTML = `<h2>Total:</h2> <h1> ${sumAllRolls}</h1>`
-        userInputBoxElement.innerHTML = " "
-        numberofSidesInputBoxElement.value = " "
     }
 
-})
-//Show individual die rolls
-showResultsButtonElement.addEventListener('click', function () {
-    let index = 0
-    while (index < dieRollsArray.length) {
-        displayAllRollsListElement.innerHTML += `<li class="dice"> ${dieRollsArray[index]} </li>`
-        index++
-    }
-    showResultsButtonElement.style.display = "none"
-    resetAllButtonElement.style.display = "inline"
+    dieRollsArray.length = []
 })
 
 //reset all
@@ -47,8 +45,6 @@ resetAllButtonElement.addEventListener('click', function () {
     dieRollsArray.length = []
     dieRollTotalsElement.innerHTML = "<h2>Total:</h2>"
     displayAllRollsListElement.innerHTML = " "
-    showResultsButtonElement.style.display = "inline"
-    resetAllButtonElement.style.display = "none"
     userInputBoxElement.value = " "
     numberofSidesInputBoxElement.value = " "
 })
