@@ -12,7 +12,7 @@
 
 body {
     height: 100vh;
-    background-image: url(./images/dungeons_and_dragons_5E_paladin_preview_1.jpg);
+    background-image: url(../images/dungeons_and_dragons_5E_paladin_preview_1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -27,7 +27,7 @@ header{
     display: flex;
     justify-content: center;
     height: 200px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/external-content.duckduckgo.com.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/external-content.duckduckgo.com.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -142,7 +142,7 @@ flex-wrap: wrap;
     padding: 5px;
     color: #333;
     font-size: 40px;
-    background-image: url(./images/d20.png);
+    background-image: url(../images/d20.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
